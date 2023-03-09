@@ -1,0 +1,41 @@
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/shop?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&useSSL=false&useAffectedRows=true
+      username: root
+      password: root
+  thymeleaf:
+    cache: false
+  web:
+    resources:
+      chain:
+        strategy:
+          content:
+            paths: /**
+            enabled: true
+
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix:
+      id-type: auto
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+mapper-locations: classpath:mapper/*.xml
+
+server:
+  port: 8000
+
+fileUpload:
+  minSize: 1024
+  maxSize: 5242880
+  allowSuffix: jpg,png
+  path: /src/main/resources/public
+  dir: /upload/
+
+  spring:
+    mvc:
+      favicon:
+        enabled=false:
